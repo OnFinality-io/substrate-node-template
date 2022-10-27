@@ -7,7 +7,7 @@ WORKDIR /node-template
 COPY . .
 RUN cargo build --locked --release
 
-# This is the 2nd stage: a very small image where we copy the Polkadot binary."
+# This is the 2nd stage: a very small image where we copy the binary."
 FROM docker.io/library/ubuntu:20.04
 LABEL description="Multistage Docker image for Substrate Node Template" \
   image.type="builder" \
