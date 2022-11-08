@@ -57,7 +57,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ env.DOCKER_REPO }}:rev-${{ steps.rev.outputs.value }}, ${{ secrets.DOCKER_REPO }}:latest
+          tags: ${{ env.DOCKER_REPO }}:v${{ steps.rev.outputs.value }}, ${{ secrets.DOCKER_REPO }}:latest
 
       - name: Update image version of the existing network spec
         uses: "OnFinality-io/action-onf-release@v1"
@@ -71,4 +71,4 @@ jobs:
           # Add a new image version to network spec
           onf-sub-command: image
           onf-action: add
-          image-version: ${{ steps.vars.outputs.sha_short }}
+          image-version: v${{ steps.vars.outputs.value }}
