@@ -71,4 +71,4 @@ jobs:
           # Add a new image version to network spec
           onf-sub-command: image
           onf-action: add
-          image-version: v${{ steps.vars.outputs.value }}
+          image-version: v${{ steps.rev.outputs.value }}
